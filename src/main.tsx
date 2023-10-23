@@ -12,7 +12,7 @@ import { client as urqlClient } from './graphql'
 import RootLayout from './layouts/RootLayout.tsx'
 import ErrorPage from './ErrorPage.tsx'
 import HomePage from './pages/HomePage.tsx'
-import LoginExcludedRoute from './components/LoginExcludedRoute';
+import LoginExcludedRoute from './components/LoginExcludedRoute'
 import {
   QueryClient,
   QueryClientProvider,
@@ -76,6 +76,19 @@ const router = createBrowserRouter([
         }
       },
       {
+        path: "/me/profile",
+        async lazy() {
+          const ProfilePage = await import('./pages/ProfilePage.tsx')
+          return {
+            Component: () => {
+              return ( 
+                <ProfilePage.default />
+              );
+            },
+          }
+        }
+      },
+      {
         path: "/verify-email/:code",
         async lazy() {
           const VerifyEmailLandingPage = await import('./pages/VerifyEmailLandingPage.tsx')
@@ -90,6 +103,15 @@ const router = createBrowserRouter([
           const ResetPasswordPage = await import('./pages/ResetPasswordPage.tsx')
           return {
             Component: ResetPasswordPage.default
+          }
+        }
+      },
+      {
+        path: "/contact",
+        async lazy() {
+          const ContactPage = await import('./pages/ContactPage.tsx')
+          return {
+            Component: ContactPage.default
           }
         }
       },

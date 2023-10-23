@@ -1,3 +1,27 @@
+# Hasura Base - React
+
+Starter template for a web application where the backend is developed with Hasura and the frontend with React.
+
+## Getting Started
+
+Begin by launching the Hasura+[Go](https://github.com/aaronblondeau/hasura-base-go) or Hasura+[Node.js](https://github.com/aaronblondeau/hasura-base) backend application.
+
+```
+yarn dev
+```
+
+## Codegen
+
+This demo app uses URQL and [GraphQL Code Generator](https://the-guild.dev/graphql/codegen).
+
+After creating a new query or muation with graphql() you will need to re-run codegen with:
+
+```
+yarn codegen
+```
+
+Note, edited codegen.ts from urql docs to include .ts and .tsx files.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -29,7 +53,11 @@ If you are developing a production application, we recommend updating the config
 
 ## Dev notes
 
+Created with
+
+```
 npm create vite@latest hasura-base-react -- --template react-ts
+```
 
 Why was https://primereact.org/ selected
 - lots of components (free)
@@ -40,20 +68,4 @@ Why was https://primereact.org/ selected
 
 Note primereact 10, broke buttons, so adding this to all to fix bg color : style={{backgroundColor: 'var(--primary-color)'}}
 
-Note, also uses https://reactrouter.com/
-
-TODO Why was mobx selected?
-
-TODO : https://tanstack.com/query/v3/
-https://formidable.com/open-source/urql/
-
 TODO : Run as an app with https://capacitorjs.com/solution/react
-
-TODO add note about running this when api changes AND when queries are added to code:
-```
-yarn codegen
-```
-Note, you may need to restart ts server in VSCode after running codegen.
-
-
-Note, edited codegen.ts from urql docs to include .ts and .tsx files.

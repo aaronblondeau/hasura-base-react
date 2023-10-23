@@ -81,7 +81,7 @@ const RegisterForm = observer(() => {
       }
 
       <div style={{marginTop: '1em'}}>
-        <Button style={{backgroundColor: 'var(--primary-color)'}} label="Register" onClick={handleRegister} disabled={handleRegisterMutation.isLoading || !termsAccepted || !email || !password} loading={handleRegisterMutation.isLoading} />  
+        <Button style={{backgroundColor: 'var(--primary-color)'}} label="Register" onClick={handleRegister} disabled={handleRegisterMutation.isLoading || !termsAccepted || !email || !password || !emailValid} loading={handleRegisterMutation.isLoading} />  
       </div>
     </div>
   )

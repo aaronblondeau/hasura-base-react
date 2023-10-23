@@ -18,9 +18,13 @@ const RootLayout = observer(() => {
   )
   const toolbarEnd = (
     <>
+    <Link to={`/contact`} style={{marginRight: 25}}>Contact</Link>
     {
-      auth.isAuthenticated ? 
-        <Button style={{backgroundColor: 'var(--primary-color)'}} label="Logout" onClick={() => auth.logout()} />
+      auth.isAuthenticated ?
+        <>
+          <Button style={{backgroundColor: 'var(--primary-color)'}} label="Logout" onClick={() => auth.logout()} />
+          <Link style={{ marginLeft: 25 }} to={`me/profile`}>Profile</Link>
+        </>
         :
         location.pathname !== '/auth/login' ? <Link to={`auth/login`}>Login</Link> : <div></div>
     }
